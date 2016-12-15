@@ -10,18 +10,25 @@ with open("tatp_2014.csv") as input_file:
         if row[1] != "":
             primary = row[0], row[1]
             output1[primary] += 1
+        if row[2] != "":
             secondary = row[0], row[2]
-            if primary == secondary:
-                output2[secondary] += 1
-                #how do you add output2 to output 1?
-            elif primary != secondary and secondary != "":
-                output3[secondary] += 1
+            output2[secondary] += 1
+        if row[3] != "":
+            tertiary = row[0], row[2]
+            output3[tertiary] += 1
 
 beneficial = (output1.most_common())
-beneficial_list = []
-for l in beneficial:
-    beneficial_list.append(l)
-print(beneficial_list)
+baneficial1 = (output2.most_common())
+beneficial2 = (output3.most_common())
+# print(beneficial)
+list2 = beneficial + baneficial1 + beneficial2
+for x in list2:
+    print(x[1])
+# beneficial_list = []
+#
+# for l in beneficial:
+#     beneficial_list.append(l)
+# print(beneficial_list)
 
 
 
