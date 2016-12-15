@@ -1,0 +1,49 @@
+import csv
+import collections
+
+output1 = collections.Counter()
+output2 = collections.Counter()
+output3 = collections.Counter()
+list = []
+with open("tatp_2014.csv") as input_file:
+    for row in csv.reader(input_file, delimiter=','):
+        if row[1] != "":
+            primary = row[0], row[1]
+            output1[primary] += 1
+            secondary = row[0], row[2]
+            if primary == secondary:
+                output2[secondary] += 1
+                #how do you add output2 to output 1?
+            elif primary != secondary and secondary != "":
+                output3[secondary] += 1
+
+beneficial = (output1.most_common())
+beneficial_list = []
+for l in beneficial:
+    beneficial_list.append(l)
+print(beneficial_list)
+
+
+
+# data_out = open("tatp_2014.csv", "rU")
+# reader = csv.reader(data_out)
+# next(reader,None)
+
+
+
+# wordfreq = [reader.count(w) for w in reader]
+
+# for lines in reader:
+#     beneficial_1 = {}
+#     if lines[1] != "":
+#         primary = lines[1]
+#         secondary = lines[2]
+#         tertiary = lines[3]
+#         beneficial_1.setdefault(primary, 0)
+#         beneficial_1[primary] += 1
+#         print(beneficial_1)
+# # with open("tatp_2014.csv","r") as f:
+#     reader = csv.reader(f,delimiter = ",")
+#     data = list(reader)
+#     for l in data:
+#         l.count('Grading')
