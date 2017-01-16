@@ -5,7 +5,10 @@ data_out = open("2014_beneficial.csv", "rU")
 reader = csv.reader(data_out)
 next(reader,None)
 
-TOPIC = [" Academic Policies", " Benchmarking", " Case Studies", " Classroom", " Classroom - Lab"]
+BENEFICIAL = [" Academic Policies", " Benchmarking", " Case Studies", " Classroom", " Classroom - Lab", " Classroom - Tutorial", " Communication", " Communication - CI",
+         " Communication - Student", " Communication - TA", " Discussion", " Expectation", " External", " Feedback", " Grading", " Group Activities", " International"
+         " Labour and Logistics", " Mental Health", " Online", " Participation", " Plagiarism", " Planning", " Privacy", " Problem Solving", " Professional Development"
+         " Question", " Review Session", " Rubric" " Strategies", " Student Interaction", " Supporting Students", " Time Management", " Troubleshooting"]
 
 add = 0
 add1 = 0
@@ -26,9 +29,6 @@ print(add1)
 print(add2)
 
 
-
-
-        # print(sum(int(rows[2]) for rows in reader))
 
 
 # first_counters = {}
